@@ -8,11 +8,8 @@
         "calendar",
         "widget"
     ],
-    "main": "./js/datepicker.js",
     "files": [
-        "build",
-        "dist",
-        "js/**/*.js",
+        "index.js",
         "less/*.less",
         "LICENSE"
     ],

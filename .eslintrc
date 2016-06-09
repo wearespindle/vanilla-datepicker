@@ -9,10 +9,7 @@
         "es6": true
     },
     "globals": {
-        "ga": false,
-        "app": true,
-        "context": true,
-        "gettext": true
+        "DPGlobal": true
     },
     "rules": {
         /** Based on https://raw.githubusercontent.com/airbnb/javascript/master/linters/.eslintrc */
