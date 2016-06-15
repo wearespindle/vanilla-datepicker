@@ -10,7 +10,7 @@
     ],
     "files": [
         "index.js",
-        "less/*.less",
+        "sass/*.scss",
         "LICENSE"
     ],
     "homepage": "https://github.com/eternicode/bootstrap-datepicker",
