@@ -1,5 +1,4 @@
-$grayLighter: #eee !default;
-$grayLight: #aaa !default;
+@import "./variables";
 
 
 .datepicker {
@@ -8,35 +7,46 @@ $grayLight: #aaa !default;
     padding: 4px;
     margin-top: 1px;
     border-radius: 4px;
-    >div {
+
+    > div {
         display: none;
     }
-    table{
+
+    table {
         width: 100%;
         margin: 0;
     }
+
     td,
-    th{
+    th {
         text-align: center;
         width: 20px;
         height: 20px;
         border-radius: 4px;
     }
+
     td {
-        &.day:hover {
-            background: $grayLighter;
-            cursor: pointer;
+        &.day {
+            &:hover {
+                background: $datepicker-hover-color;
+                color: #fff;
+                cursor: pointer;
+            }
         }
+
         &.old,
         &.new {
-            color: $grayLight;
+            color: $datepicker-default-color;
         }
-        &.active,
-        &.active:hover {
-            @include buttonBackground($btnPrimaryBackground, $btnBackgroundHighlight);
-            color: #fff;
-            text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+
+        &.active {
+            &:hover {
+                background: $datepicker-primary-background;
+                color: #fff;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+            }
         }
+
         span {
             display: block;
             width: 47px;
@@ -46,16 +56,20 @@ $grayLight: #aaa !default;
             margin: 2px;
             cursor: pointer;
             border-radius: 4px;
+
             &:hover {
-                background: $grayLighter;
+                background: $datepicker-hover-color;
+                color: $datepicker-default-color;
             }
+
             &.active {
-                @include buttonBackground($btnPrimaryBackground, $btnBackgroundHighlight);
+                background: $datepicker-primary-background;
                 color: #fff;
-                text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
             }
+
             &.old {
-                color: $grayLight;
+                color: $datepicker-default-color;
             }
         }
     }
@@ -64,118 +78,129 @@ $grayLight: #aaa !default;
         &.switch {
             width: 145px;
         }
+
         &.next,
         &.prev {
-            font-size: $baseFontSize * 1.5;
+            font-size: $datepicker-font-size * 1.5;
 
-            &:hover:not(.disabled) {
-                cursor: pointer;
+            &:hover {
+                &:not(.disabled) {
+                    cursor: pointer;
+                }
             }
         }
     }
 
-    thead tr:first-child th {
-        cursor: pointer;
-        &:hover{
-            background: $grayLighter;
+    thead {
+        tr {
+            &:first-child {
+                th {
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $datepicker-hover-color;
+                    }
+                }
+            }
         }
     }
 
-
-    /* highlight weekends */
+    // Highlight weekends.
     .weekend {
         background-color: #f4f4f4;
         border-radius: 0;
     }
 
-    /* reverse display for calendar weeks (cw) and days */
+    // Reverse display for calendar weeks (cw) and days.
     &.week-select {
         // All rows but the one with the day names in it.
-        tr:not(.header) {
-            &.active, &:hover {
-                background: #eeeeee;
-                color: #999999;
+        tr {
+            &:not(.header) {
+                &.active,
+                &:hover {
+                    background: #eee;
+                    color: $datepicker-default-color;
 
-                td {
-                    cursor: default;
+                    td {
+                        cursor: default;
+                    }
+
+                    .cw {
+                        background: $datepicker-primary-background;
+                        color: $datepicker-default-color;
+                        text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+                    }
+
+                    .disabled {
+                        border-radius: 0;
+                    }
                 }
 
-                td.cw {
-                    @include buttonBackground($btnPrimaryBackground, $btnBackgroundHighlight);
-                    color: #fff;
-                    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+                &:not(.active) {
+                    td {
+                        cursor: pointer;
+                    }
                 }
+            }
 
-                td.disabled {
+            .cw {
+                font-size: 14px;
+                width: 20px;
+                padding: 4px 5px;
+                line-height: 20px;
+                vertical-align: middle;
+            }
+
+            .day {
+                font-size: 10px;
+                width: 12px;
+                padding: 0 2px 0 5px;
+                vertical-align: middle;
+
+                &.range {
                     border-radius: 0;
                 }
-            }
 
-            &:not(.active) {
-                td {
-                    cursor: pointer;
+                &:hover {
+                    &:not(.active) {
+                        background: inherit;
+                    }
                 }
             }
-        }
 
-        .cw {
-            font-size: 14px;
-            width: 20px;
-            padding: 4px 5px;
-            line-height: 20px;
-            vertical-align: middle;
-        }
-        .day {
-            font-size: 10px;
-            width: 12px;
-            padding: 0 2px 0 5px;
-            vertical-align: middle;
+            // Don't highlight weekend columns.
+            .weekend {
+                background-color: inherit;
 
-            &.range {
-                border-radius: 0;
-            }
-
-            &:hover:not('.active') {
-                background: inherit;
-            }
-        }
-
-        // Don't highlight weekend columns.
-        .weekend {
-            background-color: inherit;
-
-            /* do not highlight weekends in .week-select */
-            .range {
-                background-color: #eeeeee;
+                // Do not highlight weekends in .week-select.
+                .range {
+                    background-color: $datepicker-hover-color;
+                }
             }
         }
     }
 }
+
 .input-append,
 .input-prepend {
     &.date {
-        .add-on i {
-            display: block;
-            cursor: pointer;
-            width: 16px;
-            height: 16px;
+        .add-on {
+            i {
+                display: block;
+                cursor: pointer;
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 }
 
 
-/* set a different baseline for text in .read-only */
-.controls.read-only {
-    font-size: 14px;
-    line-height: 20px;
-    padding-top: 5px;
-}
-
-
-#datepicker-time-frame .btn {
-    padding: 4px 10px;
-}
-
-.centered {
-    text-align: center;
+// Set a different baseline for text in .read-only.
+.controls {
+    .read-only {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 5px;
+    }
 }

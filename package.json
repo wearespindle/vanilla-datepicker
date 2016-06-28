@@ -1,7 +1,7 @@
 {
     "name": "datepicker-js",
-    "description": "Datepicker component with npm/browserify support.",
-    "version": "0.1.1",
+    "description": "Datepicker component with npm/browserify support, without bootstrap.",
+    "version": "0.1.2",
     "license": "Apache-2.0",
     "keywords": [
         "datepicker",
@@ -13,7 +13,7 @@
         "sass/*.scss",
         "LICENSE"
     ],
-    "homepage": "https://github.com/eternicode/bootstrap-datepicker",
+    "homepage": "https://github.com/wearespindle/datepicker-js",
     "author": {
         "name": "Spindle",
         "url": "https://wearespindle.com"
@@ -23,7 +23,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/wearespindle/vanilla-datepicker"
+        "url": "https://github.com/wearespindle/datepicker-js"
     },
     "dependencies": {
         "jquery": ">=1.7.1"

@@ -1146,7 +1146,7 @@ class Datepicker {
                     let th = new Date(Number(ws) + (7 + 4 - ws.getUTCDay()) % 7 * 864e5);
                     // First Thursday of year, year from thursday
                     let yth;
-                    yth = new Date(Number(yth = UTCDate(th.getUTCFullYear(), 0, 1)) + (7 + 4 - yth.getUTCDay())%7*864e5);
+                    yth = new Date(Number(yth = UTCDate(th.getUTCFullYear(), 0, 1)) + (7 + 4 - yth.getUTCDay()) % 7 * 864e5);
                     // Calendar week: ms between thursdays, div ms per day, div 7 days
                     let calWeek =  (th - yth) / 864e5 / 7 + 1;
                     html.push('<td class="cw">' + calWeek + '</td>');
@@ -2108,7 +2108,7 @@ DPGlobal = {
         }
         if (parts.length === fparts.length) {
             let cnt, _date, s;
-            for (i=0, cnt = fparts.length; i < cnt; i++) {
+            for (i = 0, cnt = fparts.length; i < cnt; i++) {
                 val = parseInt(parts[i], 10);
                 part = fparts[i];
                 if (isNaN(val)) {
