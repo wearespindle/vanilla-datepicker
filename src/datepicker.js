@@ -21,7 +21,6 @@
  * ========================================================= */
 'use strict';
 
-
 let DPGlobal = {};
 const localeOpts = [
     'format',
