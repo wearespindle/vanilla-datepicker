@@ -1361,6 +1361,20 @@ class Datepicker {
             this._setDate(UTCToday(), this.o.todayBtn === 'linked' ? null : 'view');
         }
 
+        // Clicked on tomorrow button.
+        if (target.hasClass('tomorrow')) {
+            this.showMode(-2);
+            let today = new Date();
+            this._setDate(UTCDate(today.getFullYear(), today.getMonth(), today.getDate() + 1), 'date');
+        }
+
+        // Clicked on next month button.
+        if (target.hasClass('first-day-next-month')) {
+            this.showMode(-2);
+            let today = new Date();
+            this._setDate(UTCDate(today.getFullYear(), today.getMonth() + 1, 1), 'date');
+        }
+
         // Clicked on clear button
         if (target.hasClass('clear')) {
             this.clearDates();
