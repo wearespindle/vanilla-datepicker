@@ -1,8 +1,20 @@
 {
   "name": "datepicker-js",
   "description": "Datepicker component with npm/browserify support. Depends on Jquery.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/wearespindle/datepicker-js",
+  "author": {
+    "name": "Spindle",
+    "url": "https://wearespindle.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wearespindle/datepicker-js"
+  },
+  "bugs": {
+    "url": "https://github.com/wearespindle/datepicker-js/issues"
+  },
   "keywords": [
     "datepicker",
     "calendar",
@@ -13,19 +25,10 @@
     "sass/*.scss",
     "LICENSE"
   ],
-  "homepage": "https://github.com/wearespindle/datepicker-js",
-  "author": {
-    "name": "Spindle",
-    "url": "https://wearespindle.com"
-  },
+  "main": "dist/datepicker.js",
   "scripts": {
     "compile": "babel --presets es2015 -d dist/ src/",
     "prepublish": "npm run compile"
-  },
-  "main": "dist/datepicker.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wearespindle/datepicker-js"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
