@@ -29,7 +29,7 @@
         &.day {
             &:hover {
                 background: $datepicker-hover-color;
-                color: #fff;
+                color: $datepicker-black;
                 cursor: pointer;
             }
         }
