@@ -36,9 +36,6 @@
 
         &.old,
         &.new,
-        &.disabled {
-            color: $datepicker-default-color;
-        }
 
         &.active {
             &:hover {
@@ -70,6 +67,10 @@
             }
 
             &.old {
+                color: $datepicker-default-color;
+            }
+
+            &.disabled {
                 color: $datepicker-default-color;
             }
         }
