@@ -1,7 +1,7 @@
 {
   "name": "datepicker-js",
   "description": "Datepicker component with npm/browserify support. Depends on Jquery.",
-  "version": "0.1.95",
+  "version": "0.1.96",
   "license": "Apache-2.0",
   "homepage": "https://github.com/wearespindle/datepicker-js",
   "author": {
