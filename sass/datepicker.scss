@@ -34,7 +34,6 @@
             }
         }
 
-        &.old,
         &.active {
             &:hover {
                 background: $datepicker-primary-background;
@@ -43,7 +42,8 @@
             }
         }
 
-        &.new {
+        &.new,
+        &.old {
             color: #999;
         }
 
@@ -59,7 +59,7 @@
 
             &:hover {
                 background: $datepicker-hover-color;
-                color: $datepicker-default-color;
+                color: $datepicker-black;
             }
 
             &.active,
