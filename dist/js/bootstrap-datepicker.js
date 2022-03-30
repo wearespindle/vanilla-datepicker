@@ -800,18 +800,18 @@
 			if (fromArgs){
 				// setting date by clicking
 				this.setValue();
-				this.element.change();
+				this.element.trigger('change');
 			}
 			else if (this.dates.length){
 				// setting date by typing
 				if (String(oldDates) !== String(this.dates) && fromArgs) {
 					this._trigger('changeDate');
-					this.element.change();
+					this.element.trigger('change');
 				}
 			}
 			if (!this.dates.length && oldDates.length) {
 				this._trigger('clearDate');
-				this.element.change();
+				this.element.trigger('change');
 			}
 
 			this.fill();
