@@ -21,7 +21,13 @@
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
     } else if (typeof exports === 'object') {
-        factory(require('jquery'));
+        if (window.jQuery != undefined){
+            factory(window.jQuery);
+        } else if (window.$ != undefined){
+            factory(window.$);
+        } else {
+            factory(require('jquery'));
+        }
     } else {
         factory(jQuery);
     }
@@ -812,18 +818,18 @@
 			if (fromArgs){
 				// setting date by clicking
 				this.setValue();
-				this.element.change();
+				this.element.trigger('change');
 			}
 			else if (this.dates.length){
 				// setting date by typing
 				if (String(oldDates) !== String(this.dates) && fromArgs) {
 					this._trigger('changeDate');
-					this.element.change();
+					this.element.trigger('change');
 				}
 			}
 			if (!this.dates.length && oldDates.length) {
 				this._trigger('clearDate');
-				this.element.change();
+				this.element.trigger('change');
 			}
 
 			this.fill();
@@ -1240,7 +1246,7 @@
 			}
 
 			if (this.picker.is(':visible') && this._focused_from){
-				this._focused_from.focus();
+				this._focused_from.trigger('focus');
 			}
 			delete this._focused_from;
 		},

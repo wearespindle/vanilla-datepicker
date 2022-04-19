@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-datepicker",
   "description": "A datepicker for Bootstrap",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "license": "Apache-2.0",
   "keywords": [
     "datepicker",
@@ -26,6 +26,7 @@
     "url": "https://github.com/uxsolutions/bootstrap-datepicker.git"
   },
   "dependencies": {
+    "corepack": "^0.10.0",
     "jquery": ">=3.4.0 <4.0.0"
   },
   "devDependencies": {
