@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.9.3
+-----
+
+## Bugfix
+ * Upgrade to work with jQuery 3.6.x
+
 1.9.0
 -----
 

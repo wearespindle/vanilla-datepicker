@@ -1,5 +1,5 @@
 /*!
- * Datepicker for Bootstrap v1.9.1 (https://github.com/uxsolutions/bootstrap-datepicker)
+ * Datepicker for Bootstrap v1.9.3 (https://github.com/uxsolutions/bootstrap-datepicker)
  *
  * Licensed under the Apache License v2.0 (https://www.apache.org/licenses/LICENSE-2.0)
  */
@@ -8,9 +8,9 @@
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
     } else if (typeof exports === 'object') {
-        if (window.jQuery != undefined){
+        if (window.jQuery !== undefined){
             factory(window.jQuery);
-        } else if (window.$ != undefined){
+        } else if (window.$ !== undefined){
             factory(window.$);
         } else {
             factory(require('jquery'));
@@ -1233,7 +1233,7 @@
 			}
 
 			if (this.picker.is(':visible') && this._focused_from){
-				this._focused_from.trigger('focus');
+				this._focused_from.focus();
 			}
 			delete this._focused_from;
 		},
